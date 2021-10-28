@@ -1,17 +1,16 @@
-name: CI
+# PHP
+# Test and package your PHP project.
+# Add steps that run tests, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/php
 
-on:
-  # Triggers the workflow on push or pull request events but only for the master branch
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+trigger:
+- master
 
-jobs:
-  default:
-    - step:
-        script:
-            - apt-get update
-            - apt-get -qq install git-ftp
-            - git ftp init --user $USERNAME --passwd $PASSWORD $REMOTE_DIR
-            - qq && apt-get install -y -qq lftp
+pool:
+  name: 'MES 02 Pool'
+
+steps:
+- script: |
+    apt-get update
+    apt-get -qq install git-ftp
+    git ftp init --user $USERNAME --passwd $PASSWORD $REMOTE_DIR

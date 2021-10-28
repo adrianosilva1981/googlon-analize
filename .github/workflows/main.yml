@@ -2,9 +2,7 @@
 # Test and package your PHP project.
 # Add steps that run tests, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/php
-
-trigger:
-- master
+name: Octos CI
 
 # Controls when the workflow will run
 on:

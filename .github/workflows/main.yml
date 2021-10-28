@@ -17,7 +17,8 @@ on:
 jobs:
   build:
     steps:
-      script: |
-        apt-get update
-        apt-get -qq install git-ftp
-        git ftp init --user $USERNAME --passwd $PASSWORD $REMOTE_DIR
+      - name: FTP Publish
+        run: |
+          apt-get update
+          apt-get -qq install git-ftp
+          git ftp init --user $USERNAME --passwd $PASSWORD $REMOTE_DIR

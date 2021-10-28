@@ -16,7 +16,7 @@ on:
 
 jobs:
   build:
-  - script: |
+    script: |
       apt-get update
       apt-get -qq install git-ftp
       git ftp init --user $USERNAME --passwd $PASSWORD $REMOTE_DIR
